@@ -1,0 +1,22 @@
+Day 01 — Linux User Management
+Completed my first hands-on task as part of the 100 Days of DevOps journey on KodeKloud.
+Objective
+Create a Linux user named anita with a non-interactive shell on App Server 1.
+Command Executed
+sudo useradd -s /sbin/nologin anita
+
+Verification
+grep '^anita:' /etc/passwd
+
+Key Learnings
+- Linux user management
+- User creation using useradd
+- Non-interactive shell configuration
+- Remote server access using SSH
+- Privilege escalation using sudo
+Skills Practiced
+Linux Bash SSH User Management DevOps
+
+Platform: KodeKloud
+Challenge: 100 Days of DevOps
+Status: Day 01 Completed ✅
