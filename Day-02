@@ -1,0 +1,30 @@
+Day 02 — Temporary User Setup
+
+Completed my second hands-on task as part of the 100 Days of DevOps journey on KodeKloud.
+
+Objective
+Create a lowercase Linux user named john on App Server 1 with an account expiry date of 2026-12-07.
+
+Command Executed
+
+sudo useradd -e 2026-12-07 john
+
+Verification
+
+sudo chage -l john
+
+Key Learnings
+
+    Linux user management
+    User creation using useradd
+    Setting account expiry dates
+    Verifying account expiration using chage
+    Remote server administration using SSH
+    Privilege escalation using sudo
+
+Skills Practiced
+Linux · Bash · SSH · User Management · Account Expiration · DevOps
+
+Platform: KodeKloud
+Challenge: 100 Days of DevOps
+Status: Day 02 Completed ✅
