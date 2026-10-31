@@ -1,0 +1,73 @@
+# Day 03 — Secure Root SSH Access
+
+Completed Day 03 of the **100 Days of DevOps Challenge** on KodeKloud Engineer.
+
+## Objective
+Improve SSH security across all application servers in the Stratos Datacenter by disabling direct SSH login for the root user.
+
+## Task Description
+The xFusionCorp Industries security team introduced a new security policy restricting direct root SSH access.
+
+The task was to update the SSH server configuration on all three application servers.
+
+## Servers
+- App Server 1: `stapp01`
+- App Server 2: `stapp02`
+- App Server 3: `stapp03`
+
+## Implementation
+
+**1. Edit SSH server configuration**
+
+```bash
+sudo vi /etc/ssh/sshd_config
+```
+
+**2. Update root login setting**
+
+```text
+PermitRootLogin no
+```
+
+**3. Validate SSH configuration**
+
+```bash
+sudo sshd -t
+```
+
+**4. Restart SSH service**
+
+```bash
+sudo systemctl restart sshd
+```
+
+**5. Verify configuration**
+
+```bash
+sudo sshd -T | grep permitrootlogin
+```
+
+Expected output:
+
+```text
+permitrootlogin no
+```
+
+## Key Learnings
+- Understanding SSH server configuration.
+- Difference between `ssh_config` and `sshd_config`.
+- Managing root login permissions.
+- Validating SSH configuration using `sshd -t`.
+- Restarting services using `systemctl`.
+- Verifying effective SSH settings.
+
+## Outcome
+Direct root SSH login was disabled as required on the application servers.
+
+**Status:** Completed
+
+---
+
+Continuing to build practical Linux and DevOps skills, one task at a time.
+
+#KodeKloud #KodeKloudEngineer #100DaysOfDevOps #Linux #SSH #DevOps #CyberSecurity
