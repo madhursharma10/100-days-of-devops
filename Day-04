@@ -1,0 +1,83 @@
+# Day 04 — Linux File Permissions
+
+Completed Day 04 of the **100 Days of DevOps Challenge** on KodeKloud Engineer.
+
+## Objective
+Grant executable permissions to the `/tmp/xfusioncorp.sh` Bash script on App Server 2 in the Stratos Datacenter, ensuring all users can execute it.
+
+## Task Description
+The xFusionCorp Industries sysadmin team developed a Bash script for automating backup processes. The script was distributed across the required servers but lacked executable permissions.
+
+The task was to ensure that the script was executable by the owner, group, and other users.
+
+## Server Details
+- Server: App Server 2
+- Hostname: `stapp02`
+- User: `steve`
+- Script: `/tmp/xfusioncorp.sh`
+
+## Implementation
+
+**1. Connect to App Server 2**
+
+```bash
+ssh steve@stapp02
+```
+
+**2. Check existing file permissions**
+
+```bash
+ls -l /tmp/xfusioncorp.sh
+```
+
+**3. Grant execute permission to all users**
+
+```bash
+sudo chmod a+x /tmp/xfusioncorp.sh
+```
+
+**4. Verify file permissions**
+
+```bash
+ls -l /tmp/xfusioncorp.sh
+```
+
+**5. Check numeric permissions**
+
+```bash
+stat -c "%A %a %n" /tmp/xfusioncorp.sh
+```
+
+## Verification
+
+Output:
+
+```text
+-rwxr-xr-x 755 /tmp/xfusioncorp.sh
+```
+
+Permission breakdown:
+
+| User Category | Permissions |
+|---|---|
+| Owner | Read, Write, Execute |
+| Group | Read, Execute |
+| Others | Read, Execute |
+
+## Key Learnings
+- Linux file permissions.
+- Understanding `chmod`.
+- Difference between symbolic and numeric permissions.
+- Using `chmod a+x` to grant execute permission to everyone.
+- Verifying permissions using `ls -l` and `stat`.
+
+## Outcome
+Verified that `/tmp/xfusioncorp.sh` has executable permissions for all users on App Server 2.
+
+**Status:** Completed
+
+---
+
+Building practical Linux and DevOps skills through hands-on challenges, one task at a time.
+
+#KodeKloud #KodeKloudEngineer #100DaysOfDevOps #Linux #FilePermissions #BashScripting #DevOps
