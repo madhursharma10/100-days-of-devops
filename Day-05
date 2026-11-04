@@ -1,0 +1,54 @@
+# Day 04 — SELinux Installation and Permanent Disablement
+
+Completed another hands-on task as part of my **100 Days of DevOps journey on KodeKloud**.
+
+### Objective
+Configure SELinux on App Server 2 in the Stratos Datacenter by installing the required packages and permanently disabling SELinux.
+
+### Tasks Performed
+
+1. Installed the required SELinux packages.
+2. Updated the SELinux configuration file.
+3. Set SELinux to disabled permanently.
+4. Avoided rebooting the server as instructed.
+
+### Commands Executed
+
+**1. Install SELinux packages**
+```bash
+sudo yum install -y selinux-policy selinux-policy-targeted
+```
+
+**2. Edit SELinux configuration**
+```bash
+sudo vi /etc/selinux/config
+```
+
+Updated the configuration:
+```ini
+SELINUX=disabled
+```
+
+**3. Verify configuration**
+```bash
+grep '^SELINUX=' /etc/selinux/config
+```
+
+### Expected Output
+```text
+SELINUX=disabled
+```
+
+### Key Learnings
+- Understanding SELinux (Security-Enhanced Linux).
+- Installing SELinux policy packages.
+- Managing SELinux configuration.
+- Permanently disabling SELinux.
+- Difference between current SELinux status and persistent configuration.
+
+### Important Note
+The server was not rebooted because maintenance reboot was already scheduled. The `SELINUX=disabled` setting will take effect after reboot.
+
+**Status:** Day 04 Completed ✅
+
+#KodeKloud #100DaysOfDevOps #Linux #SELinux #DevOps #LinuxAdministration #CyberSecurity
